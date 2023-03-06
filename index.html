@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EMI Calculator</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="calc-container">
+            <form class="inputs">
+                <h1 class="header">EMI Calculator</h1><br>
+                <div class="inputbox amountInput">
+                    <label>Amount (₹)</label><br>
+                    <input type="number" class="amt input" id="amt" value="" placeholder="Enter the amount">
+                </div>
+                <br>
+                <div class="inputbox interestInput">
+                    <label>Interest (%)</label><br>
+                    <input type="number" class="interest input" value="" id="interest" placeholder="Enter the interest">
+                </div>
+                <br>
+                <div class="inputbox durationInput">
+                    <label>Duration (M or Y)</label><br>
+                    <input type="number" class="month input" id="month" value="" placeholder="Enter the month">
+                </div>
+                <br>
+                <button class="period mn">Months</button>
+                <button class="period yr">Years</button><br>
+                <button class="calculate" >Calculate</button>
+            </form>
+        </div>
+        <div class="output-container">
+            <h3 class="monthlyAmt">Amount to pay monthly:</h3><br><hr><br>
+            <h3 class="totalAmt">Total Amount to pay:</h3><br><hr><br>
+            <h3 class="principleAmt">Credit Amount:</h3><br><hr><br>
+            <h3 class="onlyEmiAmt">EMI Amount:</h3>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

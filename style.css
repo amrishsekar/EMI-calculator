@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #5c1a99;
+    text-align: center;
+}
+
+.main-container{
+    display: flex; 
+    justify-content: center;
+}
+
+.calc-container{
+    margin: 25px auto;
+    border-radius: 10px;
+    background-color: #dae7e7;
+    width: 375px;
+    position: relative;
+    left: 100px;
+}
+
+.inputs{
+    padding: 40px;
+}
+
+.input {
+    width: 250px;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    height: 40px;
+    margin: 10px;
+}
+
+label{
+    position: absolute;
+    left: 85px;
+}
+
+.period{
+    padding: 10px;
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.calculate{
+    border-radius: 10px;
+    border-color: 0.5px solid lightskyblue;
+    border: none;
+    background-color: cadetblue;
+    font-weight: bold;
+    padding: 10px;
+    width: 150px;
+    margin-top: 20px;
+}
+
+.output-container{
+    margin: 25px auto;
+    border-radius: 10px;
+    background-color: #dae7e7;
+    padding: 40px;
+    text-align: center;
+    width: 375px;
+    height: 280px;
+    position: relative;
+    right: 100px;
+    top: 118px;
+}
+
+.touch{
+    background-color: green;
+    color: #fff;
+}
+
+/* 
+
+calcBtn.addEventListener("click",()=>{
+    if(!(inputAmount.value == "" && inputInterest.value == "" && inputMonth.value == "")){
+        let amount = inputAmount.value;
+        let interest = inputInterest.value/1200 
+        let month = inputMonth.value;
+    
+        let result = amount * interest
+        let result1 = Math.pow(1+interest,month)
+        let result2 = result1 -1
+
+        let final1 = result * result1
+        let final2 = final1 / result2
+        
+        output.innerText = `Interest for total Months: ${Math.floor(final2)}`;
+    }
+    else{
+        alert("Please fill all the input feilds!!!");
+    }
+})
+output.style.display = "block"; */
