@@ -20,4 +20,4 @@ workflows:
   version: 2
   emi-calculator:
     jobs:
-      - run-emi-calculator
+      - test
