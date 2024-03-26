@@ -1,43 +1,32 @@
-# Couldn't automatically generate a config from your source code.
-# This is a generic template to serve as a base for your custom config
-# See: https://circleci.com/docs/configuration-reference
+# Use the latest 2.1 version of CircleCI pipeline process engine.
 version: 2.1
+
+# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
+orbs:
+  # Use the Node orb to simplify Node.js-related configurations
+  node: circleci/node@4.1
+
+# Define jobs for different steps of the workflow
 jobs:
-  test:
-    docker:
-      - image: cimg/base:stable
+  run-js-project:
+    # Use the node orb job to set up Node.js environment
+    executor: node/default
     steps:
-      - checkout
-      # Replace this with a real test runner invocation
+      - checkout  # Check out the code from the repository
+
+      # Install dependencies if needed
+      # - run:
+      #     name: Install Dependencies
+      #     command: npm install
+
+      # Run the JavaScript file
       - run:
-          name: Run tests
-          command: echo 'replace me with real tests!' && false
-  build:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      # Replace this with steps to build a package, or executable
-      - run:
-          name: Build an artifact
-          command: touch example.txt
-      - store_artifacts:
-          path: example.txt
-  deploy:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      # Replace this with steps to deploy to users
-      - run:
-          name: deploy
-          command: '#e.g. ./deploy.sh'
+          name: Run EMI Calculator
+          command: node index.js
+
+# Define workflows to orchestrate the execution of jobs
 workflows:
-  example:
+  version: 2
+  emi_calculator:
     jobs:
-      - test
-      - build:
-          requires:
-            - test
-      - deploy:
-          requires:
-            - test
+      - run-js-project  # Run the run-js-project job
