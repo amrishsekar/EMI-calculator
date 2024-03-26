@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "test": "node index.js"  // or any other command to run your EMI calculator
+  }
+}
