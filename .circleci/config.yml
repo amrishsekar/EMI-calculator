@@ -4,28 +4,17 @@ orbs:
   node: circleci/node@5.2
 
 jobs:
-  run-emi-calculator:
+  test:
     docker:
-      - image: circleci/node:16.10
+      - image: circleci/node:16
     steps:
       - checkout
       - run:
-          name: Serve HTML and CSS files
-          command: |
-            echo 'Starting server...'
-            npx http-server -p 8080
-          background: true
+          name: Install Dependencies
+          command: npm install
       - run:
-          name: Run JavaScript for EMI Calculator
-          command: |
-            echo 'Running EMI calculator...'
-            node index.js
-      - persist_to_workspace:
-          root: .
-          paths:
-            - index.js
-            - index.html
-            - styles.css
+          name: Run EMI Calculator
+          command: npm run test
 
 workflows:
   version: 2
