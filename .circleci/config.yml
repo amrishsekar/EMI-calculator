@@ -1,0 +1,23 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.2
+
+jobs:
+  test:
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: npm install
+      - run:
+          name: Run EMI Calculator
+          command: npm start  # Adjust this command based on how you run your EMI calculator
+
+workflows:
+  version: 2
+  emi-calculator:
+    jobs:
+      - test
